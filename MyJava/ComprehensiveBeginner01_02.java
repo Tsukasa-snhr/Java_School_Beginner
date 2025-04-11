@@ -18,9 +18,8 @@ public class ComprehensiveBeginner01_02 {
         }
         System.out.println("合計=" + sum);
         System.out.println("入力された数値=");
-
         for (int i = 0; i < count; i++) {
-            System.out.println("入力された数値=" + nums[i]);
+            System.out.println( nums[i]);
 
         }
 

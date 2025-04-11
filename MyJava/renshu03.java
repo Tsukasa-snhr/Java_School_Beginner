@@ -1,5 +1,5 @@
 import java.util.Random;
-public class ComprehensiveBeginner01_03 {
+public class renshu03 {
     public static void main(String[] args) {
         Random rand = new Random();
             
@@ -15,9 +15,17 @@ public class ComprehensiveBeginner01_03 {
         if(man == woman && woman == child) {
             System.out.println("あいこです");
         } else {
-                boolean Mwin = isStronger(man, woman) && isStronger(man, child);
-                boolean Wwin = isStronger(woman, man) && isStronger(woman, child);
-                boolean Cwin = isStronger(child, woman) && isStronger(child, man);
+                boolean Mwin = (isStronger(man, woman) && isStronger(man, child)) || 
+                        ((man == child) && isStronger(man, woman)) || 
+                        ((man == woman) && isStronger(man, child));
+
+                boolean Wwin = (isStronger(woman, man) && isStronger(woman, child)) ||
+                        ((woman == child) && isStronger(woman, man)) ||
+                        ((man == woman) && isStronger(woman, child));
+
+                boolean Cwin = (isStronger(child, woman) && isStronger(child, man)) ||
+                        ((man == child) && isStronger(child, woman)) ||
+                        ((child == woman) && isStronger(child, man));
 
                 if (Mwin && Wwin) {
                     System.out.println("man と woman が勝ちました");
